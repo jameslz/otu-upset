@@ -1,0 +1,41 @@
+#!/usr/bin/perl -w
+
+use strict;
+use warnings;
+
+die "Usage:perl $0 <matrix> <cutoff:1>" if ( @ARGV != 2 );
+
+my ( $matrix, $cutoff ) =  @ARGV;
+
+print_tab();
+
+exit;
+
+sub print_tab{
+    
+    open (DATA,    $matrix) || die "$! \n";
+    my $t = <DATA>;
+    print $t;
+    while (<DATA>) {
+
+        my @its  = split /\t/, $_; 
+        
+        my $val  = 0;
+        
+        foreach my $v ( 1 .. $#its) {
+            if( $its[$v] < $cutoff ){
+                $its[$v] = 0;
+            }else{
+                $its[$v] = 1;
+            }
+            $val += $its[$v];
+        }
+
+        next if( $val == 0);
+
+        print join("\t", @its) . "\n";
+
+
+    }
+    close DATA;
+}
