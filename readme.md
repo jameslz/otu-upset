@@ -12,4 +12,8 @@ Visualization for OTU table instead of Venn diagram
    >
    > install.packages("UpSetR")
 
-   
+
+![upset][1]
+
+
+[1]: https://github.com/biostack-repo/otu-upset/blob/master/upset.png
