@@ -1,4 +1,4 @@
-Visualization for OTU table instand of Venn diagram
+Visualization for OTU table instead of Venn diagram
 
 1. usage
 
